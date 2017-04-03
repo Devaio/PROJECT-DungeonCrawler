@@ -1,14 +1,17 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { SpoopyDungeon } from './app.component';
-import { AboutPage } from '../pages/about/about';
+import { CharacterPage } from '../pages/character/character';
 import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
+import { DungeonPage } from '../pages/dungeon/dungeon';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { AbilityDetail } from '../pages/ability-detail/ability-detail';
 
+import { Characters } from '../providers/characters';
+import { Users } from '../providers/users';
 
+import { Api } from '../providers/api';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -16,9 +19,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     SpoopyDungeon,
-    AboutPage,
+    CharacterPage,
     ContactPage,
-    HomePage,
+    DungeonPage,
     TabsPage,
     LoginPage,
     AbilityDetail
@@ -29,9 +32,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     SpoopyDungeon,
-    AboutPage,
+    CharacterPage,
     ContactPage,
-    HomePage,
+    DungeonPage,
     TabsPage,
     LoginPage,
     AbilityDetail
@@ -39,6 +42,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    Characters,
+    Users,
+    Api,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

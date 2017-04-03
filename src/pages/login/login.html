@@ -5,14 +5,44 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <form (submit)="doLogin()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label fixed>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="lAccount.username" name="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="lAccount.password" name="password"></ion-input>
+      </ion-item>
+
+      <div padding>
+        <button ion-button color="primary" block>Login</button>
+      </div>
+
+    </ion-list>
+  </form>
+
+  <form (submit)="doRegister()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label fixed>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="rAccount.username" name="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="rAccount.password" name="password"></ion-input>
+      </ion-item>
+
+      <div padding>
+        <button ion-button color="primary" block>Register</button>
+      </div>
+
+    </ion-list>
+  </form>
   <button (click)="startApp()">CLICK</button>
 </ion-content>

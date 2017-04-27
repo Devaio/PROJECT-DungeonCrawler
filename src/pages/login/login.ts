@@ -20,11 +20,12 @@ export class LoginPage {
   };
 
   constructor(public navCtrl: NavController, public users : Users, public toastCtrl : ToastController) {
-    if(localStorage.getItem('_spoop')){
-      this.navCtrl.setRoot(TabsPage, {}, {
-        animate : false
-      })
-    }
+    // if(localStorage.getItem('_spoop')){
+    //   this.navCtrl.setRoot(TabsPage, {}, {
+    //     animate : false
+    //   })
+    // }
+    // console.log('USER?!', users._user);
   }
 
   startApp() {
@@ -49,6 +50,7 @@ export class LoginPage {
       toast.present();
     });
   }
+
   doRegister() {
     this.users.signup(this.rAccount).subscribe((resp) => {
       // this.navCtrl.push(MainPage);

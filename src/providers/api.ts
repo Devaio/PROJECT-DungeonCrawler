@@ -13,6 +13,8 @@ export class Api {
   }
 
   get(endpoint: string, params?: any, options?: RequestOptions) {
+    console.log('MAKING GET REQUEST');
+    
     if (!options) {
       options = new RequestOptions();
     }
@@ -31,6 +33,8 @@ export class Api {
   }
 
   post(endpoint: string, body: any, options?: RequestOptions) {
+    console.log('MAKING POST REQUEST');
+    
     return this.http.post(this.url + endpoint, body, options);
   }
 
